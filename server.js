@@ -1,13 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.listen(3000, () => {
-  console.log("Application started and Listening on port 3000");
-});
+app.use('/', require('./index.js'));
+app.use('/about', require('./index.js'));
 
-// serve your css as static
-app.use(express.static(__dirname));
-
-app.get("/", (req, res) => {
-  res.render(__dirname + "/index.html");
-});
+app.listen('3000');
