@@ -11,7 +11,3 @@ app.use(express.static(__dirname));
 app.get("/", (req, res) => {
   res.render(__dirname + "/index.html");
 });
-
-export.module  x = app.get("/login", (req, res) => {
-  res.render(__dirname + "/login");
-});
