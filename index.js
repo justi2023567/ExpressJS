@@ -8,15 +8,15 @@ router.get('/about', function(req, res) {
     res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/about.html");
 });
 
-router.get('/about', function(req, res) {
+router.get('/ethan', function(req, res) {
     res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/ethan.html");
 });
 
-router.get('/about', function(req, res) {
+router.get('/tyler', function(req, res) {
     res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/tyler.html");
 });
 
-router.get('/about', function(req, res) {
+router.get('/justin', function(req, res) {
     res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/justin.html");
 });
 
