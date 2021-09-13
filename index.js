@@ -1,23 +1,24 @@
-var router = require('express').Router();
+var app = require('express');
+var router = app.Router();
 
 router.get("/", (req, res) => {
-  res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/index.html");
+  res.sendFile(__dirname + "/HTML/index.html");
 });
 
 router.get('/about', function(req, res) {
-    res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/about.html");
+    res.sendFile(__dirname + "/HTML/about.html");
 });
 
 router.get('/ethan', function(req, res) {
-    res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/ethan.html");
+    res.sendFile(__dirname + "/HTML/ethan.html");
 });
 
 router.get('/tyler', function(req, res) {
-    res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/tyler.html");
+    res.sendFile(__dirname + "/HTML/tyler.html");
 });
 
 router.get('/justin', function(req, res) {
-    res.sendFile("C:/Users/eshimmel/OneDrive - York County School of Technology/New/ExpressJS/HTML/justin.html");
+    res.sendFile(__dirname + "/HTML/justin.html");
 });
 
 module.exports = router;
