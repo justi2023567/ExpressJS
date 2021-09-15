@@ -1,7 +1,9 @@
 .button {
-  float: right;
-  vertical-align: bottom;
+text-align: center;
+font-size: 16px;
+border-radius: 50%;
 }
+
 
 #btnbox {
   width: 100%;
@@ -11,5 +13,30 @@
   margin-top: 20px;
 }
 #btn {
-  
+
+}
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.column1 {
+  float: left;
+  width: 33.33%;
+
+}
+.column2 {
+  float: right;
+  vertical-align: bottom;
+  width: 33.33%
+}
+
+body {
+  background-image: url(https://htmlcolors.com/gradients-images/108-blue.jpg);
+}
+html {
+  color: white;
 }
