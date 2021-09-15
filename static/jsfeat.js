@@ -1,10 +1,18 @@
 function showText() {
-  var x = document.getElementById("btntest");
+  var x = document.getElementById("btnbox");
   if (x.style.display === "none") {
     x.style.display = "block";
-    x.name = "Show";
+    toggleBtn();
   } else {
     x.style.display = "none";
-    x.name = "Hide";
+    toggleBtn();
+  }
+}
+function toggleBtn() {
+  var btn = document.getElementById("btn");
+  if (btn.value === "Hide") {
+    btn.value = "Show";
+  } else {
+    btn.value = "Show";
   }
 }
