@@ -36,8 +36,16 @@ h2 {
 
 p {
   text-align: center;
+<<<<<<< HEAD
   color: lime;
   font-size: 20px;
+=======
+  border-style: solid;
+  border-color: blue;
+  border-width: 2px
+  margin: 10px
+
+>>>>>>> 0347b563db2d206c871819edfc91e5bd90f59412
 }
 
 .column1 {
@@ -57,4 +65,10 @@ body {
 html {
   color: white;
 
+}
+
+.bottomleft{
+  position: absolute;
+  bottom: 8px
+  left: 100px;
 }
