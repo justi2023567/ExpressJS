@@ -72,3 +72,9 @@ html {
   bottom: 8px
   left: 100px;
 }
+
+div {
+  text-align: center;
+  font-size: 30px;
+  color: lime;
+}
