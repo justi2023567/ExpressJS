@@ -1,11 +1,15 @@
 <html>
     <head>
+        <body onload="startTime()">
         <title>Team B About Us</title>
         <link rel="stylesheet" href="static/style.css">
+        <script type="text/javascript" src="static/jsfeat.js"></script>
     </head>
     <h1>
     About Tyler Siegmund
     </h1>
+    <div id="btnform">
+    <div id="btnbox">
     <p>
       My name is Tyler Siegmund. I am interested in the concept of Python. <br>
       I play too many video games to count and probably know too much about them. <br>
@@ -18,11 +22,11 @@
       For my specialties, I'm pretty good at Python. It's something I've spent a lot of time on.<br>
       Another thing I consider a specialty of mine is my writing skills. A lot of free time is spent writing little stories.
     </p>
-    <div id="btnform">
     <button id="button" onclick="document.getElementById('demo').innerHTML = getRndInteger(0,10)">Number</button>
-    </div id="btnform">
     <p id="demo"></p>
-    <script type="text/javascript" src="static/jsfeat.js"></script>
+    <div id="txt"></div>
+    </div>
+    </div>
     <form class="button" class="button" action="/">
         <input type="submit" value="Back to home" />
     </form>

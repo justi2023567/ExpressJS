@@ -28,3 +28,15 @@ function getRndInteger(min, max) {
     if (i < 10) {i = "0" + i};
     return i;
   }
+
+var i = 0;
+var txt = "Our team: \v Tyler Siegmund \v Ethan Shimmel \v Justin Anderson";
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("test").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}

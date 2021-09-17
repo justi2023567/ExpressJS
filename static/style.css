@@ -15,7 +15,7 @@ text-align: center;
   padding: 50px 0;
   text-align: center;
   margin-top: 20px;
-  border-color: orange;
+  border-color: lime;
   border-style: solid;
   border-width: 5px;
   border-radius: 10px;
@@ -26,8 +26,9 @@ text-align: center;
 }
 h1 {
   text-align: center;
-  color: hotpink;
+  color: lime;
   font-size: 45px;
+  text-shadow: 0 0 20px #FF0000, 0 0 5px #0000FF;
 }
 
 h2 {
@@ -36,16 +37,8 @@ h2 {
 
 p {
   text-align: center;
-<<<<<<< HEAD
-  color: lime;
   font-size: 20px;
-=======
-  border-style: solid;
-  border-color: blue;
-  border-width: 2px
-  margin: 10px
-
->>>>>>> 0347b563db2d206c871819edfc91e5bd90f59412
+  color: white;
 }
 
 .column1 {
@@ -77,4 +70,8 @@ div {
   text-align: center;
   font-size: 30px;
   color: lime;
+}
+
+#test {
+  
 }
