@@ -40,3 +40,7 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
+
+function myFunction() {
+  alert("Haha you thoght something interesting was gonna happen!");
+}
