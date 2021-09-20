@@ -1,6 +1,9 @@
 const express = require("express");
+const indexRouter = require('./index.js');
 const app = express();
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 app.use('/', require('./index.js'));
 app.use('/about', require('./index.js'));
 app.use('/ethan', require('./index.js'));
