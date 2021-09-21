@@ -1,6 +1,6 @@
 var app = require('express');
 var router = app.Router();
-const ethanpara = require('./parvar.js');
+const uspara = require('./parvar.js');
 
 var names = {ethan: "Ethan Shimmel", tyler: "Tyler Siegmund", justin: "Justin Anderson"}
 
@@ -15,19 +15,22 @@ router.get('/about', function(req, res) {
 router.get('/ethan', function(req, res) {
     res.render("ethan", {
       name: names.ethan,
-      paragraph: ethanpara
+      paragraph: uspara.ethan
     });
 });
 
 router.get('/tyler', function(req, res) {
     res.render("ethan", {
-      name: names.tyler
-
+      name: names.tyler,
+      paragraph: uspara.tyler
     });
 });
 
 router.get('/justin', function(req, res) {
-    res.render("justin");
+    res.render("justin", {
+      name: name.justin,
+      paragraph: uspara.justin
+    });
 });
 
 module.exports = router;
