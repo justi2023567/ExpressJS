@@ -1,8 +1,6 @@
 <html>
 <head>
-    <body onload="startTime()">
-    <script type="text/javascript" src="static/jsfeat.js"></script>
-    <link rel="stylesheet" href="static/style.css">
+  <%- include('./partials/head'); %>
 </head>
     <h1>
     About Ethan Shimmel
@@ -19,7 +17,5 @@
       <div id="txt"></div>
     </div>
   </div>
-    <form class="button" action="/">
-        <input type="submit" value="Back to home" />
-    </form>
+    <%- include('./partials/homebtn'); %>
 </html>
