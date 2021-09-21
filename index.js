@@ -27,8 +27,8 @@ router.get('/tyler', function(req, res) {
 });
 
 router.get('/justin', function(req, res) {
-    res.render("justin", {
-      name: name.justin,
+    res.render("ethan", {
+      name: names.justin,
       paragraph: uspara.justin
     });
 });
