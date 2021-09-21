@@ -18,4 +18,7 @@ var justinpara = "I'm Justin Anderson I like coding and wish to explore it futhe
  "I would also like to learn more about other coding language I never learned before." +
  "I would also like to experience makeing my own coding program so it's less cumbursome for other people getting into coding."
 
-module.exports = ethanpara;
+var uspara = {ethan: ethanpara, tyler: tylerpara, justin: justinpara}
+
+module.exports = uspara;
+
