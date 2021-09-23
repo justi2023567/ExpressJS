@@ -13,23 +13,23 @@ router.get('/about', function(req, res) {
 });
 
 router.get('/ethan', function(req, res) {
-    res.render("ethan", {
+      res.render("mem", {
       name: names.ethan,
-      paragraph: uspara.ethan
+      paragraph: uspara.ethan,
     });
 });
 
 router.get('/tyler', function(req, res) {
-    res.render("ethan", {
+      res.render("mem", {
       name: names.tyler,
-      paragraph: uspara.tyler
+      paragraph: uspara.tyler,
     });
 });
 
 router.get('/justin', function(req, res) {
-    res.render("ethan", {
+    res.render("mem", {
       name: names.justin,
-      paragraph: uspara.justin
+      paragraph: uspara.justin,
     });
 });
 

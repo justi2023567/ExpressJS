@@ -1,0 +1,19 @@
+<html>
+    <head>
+      <%- include('./partials/head'); %>
+    </head>
+    <h1>
+    About <%= name%>
+    </h1>
+    <div id="btnform">
+    <div id="btnbox">
+    <p>
+      <%= paragraph %>
+    </p>
+    <button id="button" onclick="document.getElementById('demo').innerHTML = getRndInteger(0,10)">Number</button>
+    <p id="demo"></p>
+    <div id="txt"></div>
+    </div>
+    </div>
+    <%- include('./partials/homebtn'); %>
+</html>

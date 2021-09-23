@@ -1,0 +1,21 @@
+<html>
+
+<head>
+  <%- include('./partials/head'); %>
+</head>
+    <h1>
+    About Justin Anderson
+    </h1>
+    <div id="btnform">
+    <button class="button" onclick="showText()">Show/Hide</button>
+    <div id="btnbox">
+    <p>
+      <%= paragraph %>
+    </p>
+    <input type="text" onkeypress="myFunction()">
+    <p>Press any key while inside the box to get a surprise.</p>
+    <div id="txt"></div>
+    </div>
+    </div>
+    <%- include('./partials/homebtn'); %>
+</html>
