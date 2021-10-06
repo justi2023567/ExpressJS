@@ -9,6 +9,7 @@ app.use('/about', require('./index.js'));
 app.use('/ethan', require('./index.js'));
 app.use('/tyler', require('./index.js'));
 app.use('/justin', require('./index.js'));
+app.use('/feedback', require('./index.js'));
 app.use("/static", express.static('./static/'));
 
 app.listen('3001');
