@@ -1,42 +1,3 @@
-var app = require('express');
-const fs = require('fs');
-var router = app.Router();
-
-var rawdata = fs.readFileSync('./static/profiles.json');
-readProfiles = JSON.parse(rawdata);
-readEthan = readProfiles.ethan
-readTyler = readProfiles.tyler
-readJustin = readProfiles.justin
-
-router.get("/", function(req, res) {
-  res.render("home");
-});
-
-router.get('/about', function(req, res) {
-    res.render("about");
-});
-
-router.get('/ethan', function(req, res) {
-      res.render("mem", {
-      name: readEthan.name,
-      paragraph: readEthan.bio,
-    });
-});
-
-router.get('/tyler', function(req, res) {
-      res.render("mem", {
-      name: readTyler.name,
-      paragraph: readTyler.bio,
-    });
-});
-
-router.get('/justin', function(req, res) {
-    res.render("mem", {
-      name: readJustin.name,
-      paragraph: readJustin.bio,
-    });
-});
-
 router.get('/feedback', function(req, res) {
     var feedBack = {
       name: req.param("name"),
@@ -67,6 +28,3 @@ router.get('/feedback', function(req, res) {
     })
     }
 })
-
-
-module.exports = router;
