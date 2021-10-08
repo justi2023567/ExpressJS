@@ -44,11 +44,18 @@ router.get('/feedback', function(req, res) {
   }
     if (feedBack.name && feedBack.adjective) {
       var rawcomments = fs.readFileSync('./static/feedback.json');
-      comments = JSON.parse(rawcomments);
-      comments.push(feedBack);
-      var comments = JSON.stringify(comments);
-      fs.writeFile('./static/feedback.json', comments, 'utf8', function() {
+      feed = JSON.parse(rawcomments);
+      console.log(feed);
+      comments = feed.comments
+      comments.push(feedBack.name + ' ' + feedBack.adjective);
+      var feed = {
+        comments: comments
+      }
+      var feed = JSON.stringify(feed);
+
+      fs.writeFile('./static/feedback.json', feed, 'utf8', function() {
         console.log('Wrote to file');
+        console.log(feed)
       });
       res.render("feedback", {
         paragraph: `You submitted ${feedBack.name} and ${feedBack.adjective}`
