@@ -51,7 +51,7 @@ router.get('/feedback', function(req, res) {
         console.log('Wrote to file');
       });
       res.render("feedback", {
-        paragraph: feedBack.name + ' ' + feedBack.adjective
+        paragraph: `You submitted ${feedBack.name} and ${feedBack.adjective}`
     })
   } else if (feedBack.adjective) {
       res.render("feedback", {
