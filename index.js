@@ -1,6 +1,9 @@
-var app = require('express');
+const express = require('express');
 const fs = require('fs');
-var router = app.Router();
+var app = express()
+var router = require('express').Router();
+
+router.use(express.urlencoded({ extended: true}));
 
 var rawdata = fs.readFileSync('./static/profiles.json');
 readProfiles = JSON.parse(rawdata);
@@ -18,30 +21,36 @@ router.get('/about', function(req, res) {
 
 router.get('/ethan', function(req, res) {
       res.render("mem", {
-      name: readEthan.name,
-      paragraph: readEthan.bio,
+      name: readProfiles.ethan.name,
+      paragraph: readProfiles.ethan.bio,
     });
 });
 
 router.get('/tyler', function(req, res) {
       res.render("mem", {
-      name: readTyler.name,
-      paragraph: readTyler.bio,
+      name: readProfiles.tyler.name,
+      paragraph: readProfiles.tyler.bio,
     });
 });
 
 router.get('/justin', function(req, res) {
     res.render("mem", {
-      name: readJustin.name,
-      paragraph: readJustin.bio,
+      name: readJustin = readProfiles.justin.name,
+      paragraph: readJustin = readProfiles.justin.bio,
     });
 });
 
 router.get('/feedback', function(req, res) {
+  res.sendFile(__dirname + '/views/getfeedback.html')
+})
+
+router.post('/feedback', function(req, res) {
+    const user = req.body.user
+    const adjective = req.body.adjective
     var feedBack = {
-      name: req.param("name"),
-      adjective: req.param("adjective")
-  }
+      name: user,
+      adjective: adjective
+    }
     if (feedBack.name && feedBack.adjective) {
       var rawcomments = fs.readFileSync('./static/feedback.json');
       feed = JSON.parse(rawcomments);
@@ -58,9 +67,9 @@ router.get('/feedback', function(req, res) {
         console.log(feed)
       });
       res.render("feedback", {
-        paragraph: `You submitted ${feedBack.name} and ${feedBack.adjective}`
+        paragraph: `Thank you ${feedBack.name} for submitting ${feedBack.adjective}`
     })
-  } else if (feedBack.adjective) {
+    } else if (feedBack.adjective) {
       res.render("feedback", {
         paragraph: "Fill out name"
       })
@@ -74,6 +83,7 @@ router.get('/feedback', function(req, res) {
     })
     }
 })
+
 
 
 module.exports = router;
