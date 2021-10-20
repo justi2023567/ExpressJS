@@ -11,6 +11,10 @@ readEthan = readProfiles.ethan
 readTyler = readProfiles.tyler
 readJustin = readProfiles.justin
 
+function getallcomments() {
+
+}
+
 router.get("/", function(req, res) {
   res.render("home");
 });
@@ -41,7 +45,13 @@ router.get('/justin', function(req, res) {
 });
 
 router.get('/feedback', function(req, res) {
-  res.sendFile(__dirname + '/views/getfeedback.html')
+  var rawcomments = fs.readFileSync('./static/feedback.json');
+  feed = JSON.parse(rawcomments);
+  console.log(feed);
+  comments = feed.comments
+  res.render('getfeedback', {
+    comments: comments
+  })
 })
 
 router.post('/feedback', function(req, res) {
@@ -49,14 +59,14 @@ router.post('/feedback', function(req, res) {
     const adjective = req.body.adjective
     var feedBack = {
       name: user,
-      adjective: adjective
+      comment: adjective
     }
-    if (feedBack.name && feedBack.adjective) {
+    if (feedBack.name && feedBack.comment != " Enter your comment here...") {
       var rawcomments = fs.readFileSync('./static/feedback.json');
       feed = JSON.parse(rawcomments);
       console.log(feed);
       comments = feed.comments
-      comments.push(feedBack.name + ' ' + feedBack.adjective);
+      comments.push(feedBack);
       var feed = {
         comments: comments
       }
@@ -67,19 +77,19 @@ router.post('/feedback', function(req, res) {
         console.log(feed)
       });
       res.render("feedback", {
-        paragraph: `Thank you ${feedBack.name} for submitting ${feedBack.adjective}`
+        paragraph: `Thank you ${feedBack.name} for submitting ${feedBack.comment}`
     })
-    } else if (feedBack.adjective) {
+  } else if (feedBack.comment != " Enter your comment here...") {
       res.render("feedback", {
         paragraph: "Fill out name"
       })
     } else if (feedBack.name) {
         res.render("feedback", {
-          paragraph: "Fill out adjective"
+          paragraph: "Fill out comment"
       })
     } else {
       res.render("feedback", {
-        paragraph: "Fill out both name and adjective"
+        paragraph: "Fill out both name and comment"
     })
     }
 })

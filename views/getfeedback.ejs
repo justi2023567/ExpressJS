@@ -11,12 +11,24 @@
     <form action="/feedback" method="post">
       <input class="feedbackform" type="text" name="user" placeholder="Enter your name here..." value="">
     <div class="commentspacing">
-      <input class="commentbox" size="75" type="text" name="adjective" placeholder="Enter your comment here..." value="">
+      <textarea class="commentbox" size="75" type="text" name="adjective" value""> Enter your comment here...</textarea>
     </div>
     <div class="">
       <input class="feedbackform" type="submit" value="Submit">
     </div>
     </form>
   </div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+    </tr>
+    <% for(var i=0; i < comments.length; i++) { %>
+       <tr>
+         <td class="colname"><%= comments[i].name %></td>
+         <td class="colcomment"><%= comments[i].comment %></td>
+       </tr>
+    <% } %>
+  </table>
   </body>
 </html>

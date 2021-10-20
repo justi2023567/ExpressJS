@@ -67,25 +67,63 @@
   height: 40px;
 }
 
-.feedbackform{
+.gobackbtn1 {
+    position:absolute;
+    top:40;
+    right:100;
+    border: none;
+    float: right;
+    background-color: lime;
+    color: blue;
+    font-size: 25px;
+}
+
+.feedbackform {
   text-align: center;
   background-color: lightgrey;
-  color: black;
+  color: #383838;
   padding: 10px 30px;
 }
 
 .commentbox{
   padding: 2px 2px;
+  width: 300px;
   height: 100px;
-  resize: vertical;
-  font-size: 30px;
+  resize: none;
+  font-size: 20px;
   background-color: lightgrey;
-  color: black;
+  color: #383838;
   text-align: left;
 }
 
 .commentspacing{
   padding: 30px 30px;
+}
+
+table, th, td {
+  color: black;
+}
+table {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+th {
+  background-color: grey;
+  border:2px solid black;
+  color: #DCDCDC;
+}
+td {
+  background-color: lightgrey;
+  border:2px solid black;
+}
+
+.colname{
+  width: 10%;
+}
+
+.colcomment{
+  width: 90%%;
 }
 
 
@@ -119,6 +157,14 @@ h1 {
 h2 {
   text-align: left;
 }
+h3 {
+  text-align: center;
+  color: lime;
+  font-size: 45px;
+  text-shadow: 0 0 20px #330066, 0 0 10px #330066;
+  width: 90%;
+  height: auto;
+}
 
 p {
   text-align: center;
@@ -138,11 +184,10 @@ p {
 }
 
 body {
-  background-image: url(https://htmlcolors.com/gradients-images/108-blue.jpg);
 }
 html {
   color: white;
-
+  background-image: url(https://htmlcolors.com/gradients-images/108-blue.jpg);
 }
 
 .bottomleft{
