@@ -1,30 +1,48 @@
-router.get('/feedback', function(req, res) {
-    var feedBack = {
-      name: req.param("name"),
-      adjective: req.param("adjective")
+if (req.body.user) {
+  const user = req.body.user
+  const adjective = req.body.comment
+} else {
+  res.send('error')
+}
+var feedBack = {
+  name: user,
+  adjective: adjective
+}
+if (feedBack.name && feedBack.adjective) {
+  var rawcomments = fs.readFileSync('./static/feedback.json');
+  feed = JSON.parse(rawcomments);
+  console.log(feed);
+  comments = feed.comments
+  comments.push(feedBack.name + ' ' + feedBack.adjective);
+  var feed = {
+    comments: comments
   }
-    if (feedBack.name && feedBack.adjective) {
-      var rawcomments = fs.readFileSync('./static/feedback.json');
-      comments = JSON.parse(rawcomments);
-      comments.push(feedBack);
-      var comments = JSON.stringify(comments);
-      fs.writeFile('./static/feedback.json', comments, 'utf8', function() {
-        console.log('Wrote to file');
-      });
-      res.render("feedback", {
-        paragraph: feedBack.name + ' ' + feedBack.adjective
-    })
-  } else if (feedBack.adjective) {
-      res.render("feedback", {
-        paragraph: "Fill out name"
-      })
-    } else if (feedBack.name) {
-        res.render("feedback", {
-          paragraph: "Fill out adjective"
-      })
-    } else {
-      res.render("feedback", {
-        paragraph: "Fill out both name and adjective"
-    })
-    }
+  var feed = JSON.stringify(feed);
+
+  fs.writeFile('./static/feedback.json', feed, 'utf8', function() {
+    console.log('Wrote to file');
+    console.log(feed)
+  });
+  res.render("feedback", {
+    paragraph: `You submitted ${feedBack.name} and ${feedBack.adjective}`
 })
+} else if (feedBack.adjective) {
+  res.render("feedback", {
+    paragraph: "Fill out name"
+  })
+} else if (feedBack.name) {
+    res.render("feedback", {
+      paragraph: "Fill out adjective"
+  })
+} else {
+  res.render("feedback", {
+    paragraph: "Fill out both name and adjective"
+})
+}
+
+
+
+var feedBack = {
+  name: user,
+  adjective: adjective
+}
